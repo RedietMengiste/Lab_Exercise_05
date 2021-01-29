@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <h1 class="addresult"></h3>
+    <h2>Performs:</h2>
+
+    <div class="input-field">
+      <label><h3> Addition</h3></label>
+      <h4>Enter the numbers you want to add using commas in between</h4>
+      <input type="text" name="addition" id="valueAdd" />
+      <input type="button" id="A_calc" value="Calculate" onclick="addition()">
+      <h3 id="addresult"></h3>
+    </div>
+    
+    <h1 class="addresult"></h1>
+
+    <div class="input-field">
+      <label><h3> Subtraction</h3></label>
+      <h4>Enter the numbers you want to perform subtraction on</h4>
+      <input type="number" name="subtraction" id="val1" />
+      <input type="number" name="subtraction" id="val2" />
+      <input type="button" id="s_calc" value="Calculate" onclick="subtraction()">
+      <h3 id="subresult"></h3>
+    </div>
+    <h1 class="subresult"></h1>
+    <div class="input-field">
+      <label><h3> Multiplication</h3></label>
+      <h4>Enter the numbers you want to multiply using commas in between</h4>
+      <input type="text" name="multiplication" id="valueMul" />
+      <input type="button" id="M_calc" value="Calculate" onclick="multiplication()">
+      <h3 id="mulresult"></h3>
+    </div>
+    <div class="input-field">
+      <label><h3> Division</h3></label>
+      <h4>Enter the numbers you want to perform division on</h4>
+      <input type="number" name="division" id="valOne" />
+      <input type="number" name="division" id="valTwo" />
+      <input type="button" id="d_calc" value="Calculate" onclick="division()">
+      <h3 id="divresult"></h3>
+    </div>
+    <div class="input-field">
+      <label><h3> Square root</h3></label>
+      <h4>Enter the number you want to perform a square-root function on</h4>
+      <input type="number" name="squareroot" id="valOneSq" />
+      <input type="button" id="sq_calc" value="Calculate" onclick="squareRoot()">
+      <h3 id="sqrtresult"></h3>
+    </div>
+   
+    <div class="input-field">
+      <label> <h3>Average</h3></label>
+      <h4>Enter the numbers you want to know average of using commas in between</h4>
+      <input type="text" name="average" id="valave" />
+      <input type="button" id="ave_calc" value="Calculate" onclick="average()">
+      <h3 id="averesult"></h3>
+    </div>
+  
+    <div class="input-field">
+      <label><h3>Minimum value</h3></label>
+      <h4>Enter the numbers you want to know minimum value of using commas in between</h4>
+      <input type="text" name="minimum" id="valmin" />
+      <input type="button" id="min_calc" value="Calculate" onclick="minimum()">
+      <h3 id="minresult"></h3>
+    </div>
+    <div class="input-field">
+      <label> <h3>Maximum value</h3></label>
+      <h4>Enter the numbers you want to know maximum value using commas in between</h4>
+      <input type="text" name="maximum" id="valmax" />
+      <input type="button" id="max_calc" value="Calculate" onclick="maximum()">
+      <h3 id="maxresult"></h3>
+    </div>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
