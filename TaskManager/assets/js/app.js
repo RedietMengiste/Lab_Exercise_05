@@ -65,35 +65,17 @@ function clearAllTasks() {
 }
 // Filter tasks function definition
 function filterTasks(e) {
-  document.querySelectorAll(".collection.item").forEach((item) => {
-    if (item.firstChild.textContent.toString() === filter.value.toString()) {
-      item.style.display = "block";
+  const keyword = filter.value;
+  const tasts_list = document.querySelectorAll(".collection-item");
+  tasts_list.forEach(function (words) {
+    if (words.firstChild.textContent.indexOf(keyword)) {
+      words.style.display = "none";
     } else {
-      item.style.display = "none";
+      words.style.display = "block";
     }
   });
 }
-// var vals, ul, li;
-// vals = filter.value;
-// ul = taskList;
-// li = taskList.getElementsByTagName("li");
-// for (i = 0; i < li.length; i++) {
-//   keywords = li[i].getElementsbyClassName(".collection-item")[0];
-//   // txtValue = a.textContent || a.innerText;
-//   if (keywords.toUpperCase().indexOf(vals.toLowerCase()) > -1) {
-//     li[i].style.display = "";
-//   } else {
-//     li[i].style.display = "none";
-//   }
-// }
-// let keyword = filter.value.toLowerCase();
-// //tasks.filter((keyword) => keyword.toLowerCase().indexOf(query.toLowerCase()) !== -1);
 
-// let filterTaskList = tasks.filter(
-//   (task) => task.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
-// );
-// displayFilter(filterTaskList);
-// }
 // Remove Task function definition
 function removeTask(e) {
   if (e.target.parentElement.classList.contains("delete-item")) {
