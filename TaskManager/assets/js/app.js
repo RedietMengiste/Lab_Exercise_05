@@ -8,6 +8,8 @@ const taskList = document.querySelector(".collection"); //The ul
 
 const clearBtn = document.querySelector(".clear-tasks"); //the all task clear button
 
+const sortlist = document.querySelector(".browser-default");
+
 const reloadIcon = document.querySelector(".fa"); //the reload button at the top navigation
 
 // Add Event Listener  [Form , clearBtn and filter search input ]
@@ -24,7 +26,8 @@ filter.addEventListener("keyup", filterTasks);
 taskList.addEventListener("click", removeTask);
 // Event Listener for reload
 reloadIcon.addEventListener("click", reloadPage);
-
+//Event listener for sort in ascending and descending order
+sortlist.addEventListener("change", sortTaskLists);
 // Add New  Task Function definition
 function addNewTask(e) {
   // Check empty entry
@@ -66,8 +69,8 @@ function clearAllTasks() {
 // Filter tasks function definition
 function filterTasks(e) {
   const keyword = filter.value;
-  const tasts_list = document.querySelectorAll(".collection-item");
-  tasts_list.forEach(function (words) {
+  const tasks_list = document.querySelectorAll(".collection-item");
+  tasks_list.forEach(function (words) {
     if (words.firstChild.textContent.indexOf(keyword)) {
       words.style.display = "none";
     } else {
@@ -89,6 +92,41 @@ function removeTask(e) {
 function reloadPage() {
   //using the reload fun on location object
   location.reload();
+}
+
+function sortTaskLists() {
+  const addeddTasks = document.querySelectorAll(".collection-item");
+
+  let taskDates = [];
+
+  addeddTasks.forEach(function (words) {
+    taskDates.push(words.value);
+    console.log(words.value);
+  });
+
+  taskDates.sort();
+
+  let len = taskDates.length;
+
+  if (sortlist.value == "0") {
+    for (let i = 0; i < len; i++) {
+      addeddTasks.forEach(function (words) {
+        if (taskDates[i] == words.value) {
+          taskList.appendChild(words);
+        }
+      });
+    }
+    console.log(taskDates);
+  } else {
+    for (let i = len; i >= 0; i--) {
+      addeddTasks.forEach(function (words) {
+        if (taskDates[i] == words.value) {
+          taskList.appendChild(words);
+        }
+      });
+    }
+    console.log(taskDates);
+  }
 }
 
 //const cardTitle = document.querySelector(".card-title");
